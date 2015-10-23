@@ -1,5 +1,5 @@
 package is.ru.TicTacToe;
 
-public class {
+public class TicTacToeService{
 
 }
