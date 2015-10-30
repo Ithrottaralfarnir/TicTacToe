@@ -112,5 +112,20 @@ public class TicTacToeServiceTest{
         assertEquals(false, service.checkWinner());
   }
 
+  @Test
+  public void testCheckWinnerVertical() {
+	for(int x = 0; x < SIZE_OF_BOARD; x++){
+          board[x][1] = PLAYER1;
+        }
+        assertEquals(true, service.checkWinner());
+  }
 
+  @Test
+  public void testCheckNotWinnerVertical() {
+	for(int x = 0; x < SIZE_OF_BOARD; x++){
+          board[x][1] = PLAYER1;
+        }
+ 	board[0][1] = PLAYER2;       
+        assertEquals(false, service.checkWinner());
+  }
 }

@@ -86,7 +86,13 @@ public class TicTacToeService {
 					return true;
 				}
 			}
-					
+			// Check vertical winner
+			for(int y = 0; y < SIZE_OF_BOARD; y++){
+				if(getCell(0, y) == player && getCell(1, y) == player && getCell(2, y) == player){
+					return true;
+				}
+			}
+						
 			player = PLAYER2;
 		}		
 		return false;
