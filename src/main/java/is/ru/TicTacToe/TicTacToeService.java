@@ -40,5 +40,16 @@ public class TicTacToeService {
        public boolean cellIsEmpty(int x, int y){
 		return board[x][y] == ' ';
 	}
+
+        public boolean inputIsValid(int x, int y){
+		if(x < 0 || x > 2){
+			return false;
+		}
+		if(y < 0 || y > 2)
+		{
+			return false;
+		}
+		return true;
+	}
 }
 
