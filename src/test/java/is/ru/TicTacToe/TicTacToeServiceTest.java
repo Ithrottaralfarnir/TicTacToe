@@ -53,4 +53,23 @@ public class TicTacToeServiceTest{
         board[0][2] = PLAYER2;
         assertEquals(false, service.cellIsEmpty(0, 2));
   }
+
+  @Test
+  public void testInputIsValid() {
+        assertEquals(true, service.inputIsValid(2, 2));
+  }
+
+  @Test
+  public void testInputIsValid2() {
+        assertEquals(true, service.inputIsValid(0, 0));
+  }
+
+  @Test
+  public void testInputIsNotValid() {
+        assertEquals(false, service.inputIsValid(0, 3));
+  }
+  @Test
+  public void testInputIsNotValid2() {
+        assertEquals(false, service.inputIsValid(-1, 0));
+  }
 }
