@@ -36,5 +36,9 @@ public class TicTacToeService {
 	public void setCell(int x, int y, char player){
 		board[x][y] = player;
 	}
+      
+       public boolean cellIsEmpty(int x, int y){
+		return board[x][y] == ' ';
+	}
 }
 

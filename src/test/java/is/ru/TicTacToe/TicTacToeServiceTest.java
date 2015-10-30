@@ -47,4 +47,18 @@ public class TicTacToeServiceTest{
         service.setCell(0,0, PLAYER2);        
         assertEquals(PLAYER2, board[0][0]);
   }
+
+  @Test
+  public void testCelIsEmpty() {
+        TicTacToeService service = new TicTacToeService();
+        assertEquals(true, service.cellIsEmpty(0, 2));
+  }
+
+  @Test
+  public void testCelIsNotEmpty() {
+        TicTacToeService service = new TicTacToeService();
+        board = service.getBoard();
+        board[0][2] = PLAYER2;
+        assertEquals(false, service.cellIsEmpty(0, 2));
+  }
 }
