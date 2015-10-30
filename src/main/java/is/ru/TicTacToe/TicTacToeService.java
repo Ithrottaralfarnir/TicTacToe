@@ -61,5 +61,10 @@ public class TicTacToeService {
 		}
 		return true;
 	}
+
+	public char getCurrentPlayer(){
+		return currentPlayer;
+	}
+
 }
 
