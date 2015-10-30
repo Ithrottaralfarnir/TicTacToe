@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cp ~/TicTacToe/build/libs/TicTacToe.jar ~/TicTacToe/build/tmp/
+
+java -jar ~/TicTacToe/build/tmp/TicTacToe.jar
