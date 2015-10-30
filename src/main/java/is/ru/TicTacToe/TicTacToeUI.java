@@ -49,4 +49,18 @@ TicTacToeService service = new TicTacToeService();
 		System.out.println();
 		//}
 	}
+	public void invalidInputNumber(){
+		System.out.println("The input you entered is not a number");
+		System.out.println("Please enter a number");
+	}
+	
+	public void invalidMove(){
+		System.out.println("The move you made is invalid");
+		System.out.println("Please try a move within the valid range");
+	}
+	
+	public void invalidCellPosistion(){
+		System.out.println("The cell you entered is occupied");
+		System.out.println("Please try another cell");
+	}
 }
