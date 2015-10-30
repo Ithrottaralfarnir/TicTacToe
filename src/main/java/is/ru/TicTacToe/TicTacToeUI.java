@@ -19,4 +19,19 @@ TicTacToeService service = new TicTacToeService();
 		System.out.print("--------------");
 		System.out.println();
 	}
+	public void greetingMessage(){
+		System.out.println("         Welcome to the ultimate TicTacToe Game!");
+		System.out.println("--------------------------------------------------------");
+		System.out.println("TicTacToe is a game for two players, X and O,");
+		System.out.println("who take turns marking the spaces in a 3x3 grid.");
+		System.out.println("The player who succeeds in placing 3 of their marks in a");
+		System.out.println("horizontal, vertical, or diagonal row wins the game.");
+		System.out.println();
+		System.out.println("Player one is X and player 2 is O");
+		System.out.println("Player one starts");
+		System.out.println();
+		System.out.println("LET THE GAME BEGIN !");
+		System.out.println();
+		System.out.println();
+	}
 }
