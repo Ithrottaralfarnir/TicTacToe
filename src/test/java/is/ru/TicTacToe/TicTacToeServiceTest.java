@@ -8,20 +8,36 @@ public class TicTacToeServiceTest{
   public static void main(String args[]) {
     org.junit.runner.JUnitCore.main("is.ru.TicTacToe.TicTacToeServiceTest");
   }
-  
-  private int SIZE_OF_BOARD = 3;
+ 
+        private char board[][];
+	private char currentPlayer;
+	private int SIZE_OF_BOARD = 3;
+	
+	private final char PLAYER1 = 'X';
+	private final char PLAYER2 = 'O';
+	private final char EMPTY = ' ';
 
   @Test
   public void testInitializeBoard() {
         TicTacToeService service = new TicTacToeService();
         boolean allEmpty = true;
+        board = service.getBoard();
         for(int x = 0; x < SIZE_OF_BOARD; x++){
         	for(int y = 0; y < SIZE_OF_BOARD; y++){
-        		if(service.getCell(x, y) != ' '){
+        		if(board[x][y] != ' '){
         			allEmpty = false;
         		}
         	}
         }
         assertEquals(true, allEmpty);
   }
+  
+  @Test
+  public void testGetCell() {
+        TicTacToeService service = new TicTacToeService();
+        board = service.getBoard();
+        board[1][2] = PLAYER1;        
+        assertEquals(PLAYER1, service.getCell(1, 2));
+  }
+  
 }
