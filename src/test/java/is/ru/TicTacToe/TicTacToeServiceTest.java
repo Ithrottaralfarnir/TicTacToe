@@ -40,4 +40,11 @@ public class TicTacToeServiceTest{
         assertEquals(PLAYER1, service.getCell(1, 2));
   }
   
+  @Test
+  public void testSetCell() {
+        TicTacToeService service = new TicTacToeService();
+        board = service.getBoard();
+        service.setCell(0,0, PLAYER2);        
+        assertEquals(PLAYER2, board[0][0]);
+  }
 }
