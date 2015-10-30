@@ -65,6 +65,16 @@ public class TicTacToeService {
 	public char getCurrentPlayer(){
 		return currentPlayer;
 	}
+        
+        public void changePlayer(){
+		if(getCurrentPlayer() == PLAYER1){
+			currentPlayer = PLAYER2;
+		}
+		else{
+			currentPlayer = PLAYER1;
+		}
+	}
+
 
 }
 
