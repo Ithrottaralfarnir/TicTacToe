@@ -75,6 +75,22 @@ public class TicTacToeService {
 		}
 	}
 
+                public boolean checkWinner(){	
+		char player = PLAYER1;
+		int numberOfPlayers = 2;
+		// Check if any player has won
+		for(int i = 0; i < numberOfPlayers; i++){
+			// Check horizontal winner
+			for(int x = 0; x < SIZE_OF_BOARD; x++){
+				if(getCell(x, 0) == player && getCell(x, 1) == player && getCell(x, 2) == player){
+					return true;
+				}
+			}
+					
+			player = PLAYER2;
+		}		
+		return false;
+	}
 
 }
 

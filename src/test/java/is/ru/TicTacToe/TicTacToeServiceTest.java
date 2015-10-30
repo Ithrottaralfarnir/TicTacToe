@@ -94,5 +94,23 @@ public class TicTacToeServiceTest{
 	service.changePlayer();
         assertEquals(PLAYER2, service.getCurrentPlayer());
   }
+  
+  @Test
+  public void testCheckWinnerHorizontal() {
+	for(int y = 0; y < SIZE_OF_BOARD; y++){
+          board[0][y] = PLAYER1;
+        }
+        assertEquals(true, service.checkWinner());
+  }
+
+  @Test
+  public void testCheckNotWinnerHorizontal() {
+	for(int y = 0; y < SIZE_OF_BOARD; y++){
+          board[0][y] = PLAYER1;
+        }
+ 	board[0][2] = PLAYER2;       
+        assertEquals(false, service.checkWinner());
+  }
+
 
 }
