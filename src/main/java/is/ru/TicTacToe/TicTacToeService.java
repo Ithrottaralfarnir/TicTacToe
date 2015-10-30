@@ -1,7 +1,8 @@
 package is.ru.TicTacToe;
 
-public class TicTacToeService{
-  	private char board[][];
+public class TicTacToeService {
+	
+	private char board[][];
 	private char currentPlayer;
 	private int SIZE_OF_BOARD = 3;
 	
@@ -22,8 +23,18 @@ public class TicTacToeService{
 			}
 		}
 	}
-
+	
+	// For testing purposes
+	public char[][] getBoard(){
+		return board;
+	}
+	
 	public char getCell(int x, int y){
 		return board[x][y];
-	}  
+	}
+	
+	public void setCell(int x, int y, char player){
+		board[x][y] = player;
+	}
 }
+
