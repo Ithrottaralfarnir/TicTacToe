@@ -11,7 +11,7 @@ public class TicTacToeServiceTest{
  
 	private TicTacToeService service = new TicTacToeService();
         private char board[][] = service.getBoard();
-	private char currentPlayer;
+	private char currentPlayer; 
 	private int SIZE_OF_BOARD = 3;
         private final char PLAYER1 = 'X';
 	private final char PLAYER2 = 'O';
@@ -84,4 +84,8 @@ public class TicTacToeServiceTest{
         assertEquals(false, service.inputIsANumber("Seven", "7"));
   }
 
+  @Test
+  public void testGetCurrentPlayer() {
+        assertEquals(PLAYER1, service.getCurrentPlayer());
+  }
 }
