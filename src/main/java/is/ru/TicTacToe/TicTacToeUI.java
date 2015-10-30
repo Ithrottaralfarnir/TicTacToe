@@ -34,4 +34,19 @@ TicTacToeService service = new TicTacToeService();
 		System.out.println();
 		System.out.println();
 	}
+	public void winnerMessage(){
+		// add checkwinner
+		//if(checkwinner = 1){
+		System.out.println("Congratulation Player 1 You Won !");
+		System.out.println();
+		//}
+		//if(checkwinner = 2){
+		System.out.println("Congratulation Player 2 You Won !");
+		System.out.println();
+		//}
+		//if(checkwinner = 2){
+		System.out.println("Boring Draw :/");
+		System.out.println();
+		//}
+	}
 }
