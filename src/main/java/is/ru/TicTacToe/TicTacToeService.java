@@ -51,5 +51,15 @@ public class TicTacToeService {
 		}
 		return true;
 	}
+
+        public boolean inputIsANumber(String x, String y){
+		try{
+		    Integer.parseInt(x);
+		    Integer.parseInt(x);
+		}catch (NumberFormatException ex) {
+			return false;
+		}
+		return true;
+	}
 }
 
