@@ -105,6 +105,17 @@ public class TicTacToeService {
 		}		
 		return false;
 	}
-
+   
+	public boolean isBoardFull() {
+		for (int x = 0; x < SIZE_OF_BOARD; x++) {
+			for (int y = 0; y < SIZE_OF_BOARD; y++) {
+				if (board[x][y] == EMPTY) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+ 
 }
 

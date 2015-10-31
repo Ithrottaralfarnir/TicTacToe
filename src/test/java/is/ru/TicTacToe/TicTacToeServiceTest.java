@@ -163,5 +163,19 @@ public class TicTacToeServiceTest{
 	assertEquals(false, service.checkWinner());
   }
 
+  @Test
+  public void testIsBoardFull() {
+        for(int x = 0; x < SIZE_OF_BOARD; x++){
+	  for(int y = 0; y < SIZE_OF_BOARD; y++){
+	    board[x][y]	= PLAYER1;
+          }
+	}
+	assertEquals(true, service.isBoardFull());
+  }
+
+  @Test
+  public void testIsBoardNotFull() {
+	assertEquals(false, service.isBoardFull());
+  }
 
 }
