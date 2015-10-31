@@ -92,7 +92,15 @@ public class TicTacToeService {
 					return true;
 				}
 			}
-						
+			
+			// Check diagonal winner
+			if(getCell(0, 0) == player && getCell(1, 1) == player && getCell(2, 2) == player){
+				return true;
+			}
+			else if(getCell(2, 0) == player && getCell(1, 1) == player && getCell(0, 2) == player){
+				return true;
+			}
+			
 			player = PLAYER2;
 		}		
 		return false;

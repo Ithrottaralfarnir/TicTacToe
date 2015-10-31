@@ -128,4 +128,40 @@ public class TicTacToeServiceTest{
  	board[0][1] = PLAYER2;       
         assertEquals(false, service.checkWinner());
   }
+
+  @Test
+  public void testCheckWinnerDiagonal() {
+        board[0][0] = PLAYER1;
+        board[1][1] = PLAYER1;
+        board[2][2] = PLAYER1;
+        assertEquals(true, service.checkWinner());
+  }
+
+
+  @Test
+  public void testCheckNotWinnerDiagonal() {
+        board[0][0] = PLAYER1;
+        board[1][1] = PLAYER1;
+        board[2][2] = PLAYER2;
+	assertEquals(false, service.checkWinner());
+  }
+
+  @Test
+  public void testCheckWinnerDiagonal2() {
+        board[2][0] = PLAYER1;
+        board[1][1] = PLAYER1;
+        board[0][2] = PLAYER1;
+        assertEquals(true, service.checkWinner());
+  }
+
+
+  @Test
+  public void testCheckNotWinnerDiagonal2() {
+        board[2][0] = PLAYER1;
+        board[1][1] = PLAYER1;
+        board[0][2] = PLAYER2;
+	assertEquals(false, service.checkWinner());
+  }
+
+
 }
