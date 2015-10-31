@@ -63,4 +63,22 @@ TicTacToeService service = new TicTacToeService();
 		System.out.println("The cell you entered is occupied");
 		System.out.println("Please try another cell");
 	}
+	public void winnerMessage(){
+		char currentPlayer = service.getCurrentPlayer();
+		boolean checkWinner = service.checkWinner();
+		if(checkWinner){
+			if(currentPlayer == 'X'){
+				System.out.println("Congratulation Player 1 You Won !");
+				System.out.println();
+				}
+			else{
+				System.out.println("Congratulation Player 2 You Won !");
+				System.out.println();
+			}
+		}
+		else{
+			System.out.println("Boring draw :/");
+			System.out.println();
+		}
+	}
 }
