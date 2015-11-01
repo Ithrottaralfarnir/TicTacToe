@@ -65,15 +65,25 @@ public class TicTacToeServiceTest{
   }
 
   @Test
-  public void testInputIsNotValid() {
+  public void testInputIsNotValidYToLarge() {
         assertEquals(false, service.inputIsValid(0, 3));
   }
   
   @Test
-  public void testInputIsNotValid2() {
-        assertEquals(false, service.inputIsValid(-1, 0));
+  public void testInputIsNotValidYToSmall() {
+        assertEquals(false, service.inputIsValid(1, -1));
   }
 
+  @Test
+  public void testInputIsNotValidXToLarge() {
+        assertEquals(false, service.inputIsValid(3, 2));
+  }
+  
+  @Test
+  public void testInputIsNotValidXToSmall() {
+        assertEquals(false, service.inputIsValid(-1, 0));
+  }
+  
   @Test
   public void testInputIsANumber() {
         assertEquals(true, service.inputIsANumber("1", "2"));
