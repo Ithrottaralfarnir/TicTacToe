@@ -5,15 +5,17 @@ import java.util.Scanner;
 public class TicTacToeUI{
 
 	private TicTacToeService service = new TicTacToeService();
-	
+	private int SIZE_OF_BOARD = 3;
+	private final char PLAYER1 = 'X';	
+
 	public void displayBoard(){
 		System.out.println("Current Tic-Tac-Toe status");
 		System.out.print("--------------");
 		System.out.println();
 		System.out.println();
-		for(int x = 0; x<3; x++){
+		for(int x = 0; x < SIZE_OF_BOARD; x++){
 			System.out.print("| ");
-			for(int y = 0; y<3; y++){
+			for(int y = 0; y < SIZE_OF_BOARD; y++){
 				System.out.print(service.getCell(x, y) + " | ");
 			}
 			System.out.println();
@@ -56,7 +58,7 @@ public class TicTacToeUI{
 		char currentPlayer = service.getCurrentPlayer();
 		boolean checkWinner = service.checkWinner();
 		if(checkWinner){
-			if(currentPlayer == 'X'){
+			if(currentPlayer == PLAYER1){
 				System.out.println("Congratulation Player 1 You Won !");
 				System.out.println();
 				}
@@ -82,7 +84,7 @@ public class TicTacToeUI{
 		do {
 			while (true) {
 				displayBoard();
-				if (service.getCurrentPlayer() == 'X') {
+				if (service.getCurrentPlayer() == PLAYER1) {
 					System.out.println("Player1 make your move!");
 				} else {
 					System.out.println("Player2 make your move!");
@@ -121,12 +123,12 @@ public class TicTacToeUI{
 				displayBoard();
 				winnerMessage();
 				System.out.println("Play again? (y/n)");
-				playAgain = in.nextLine();
+				playAgain = in.nextLine().toLowerCase();
 				service.initializeBoard();
 			} else {
 				service.changePlayer();
 			}
-		} while (playAgain.equals("y"));
+		} while(playAgain.equals("y") || playAgain.equals("yes"));
 		
 		in.close();
 	}
