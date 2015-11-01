@@ -1,7 +1,10 @@
 package is.ru.TicTacToe;
 
+import java.util.Scanner;
+
 public class TicTacToeUI{
-TicTacToeService service = new TicTacToeService();
+
+	private TicTacToeService service = new TicTacToeService();
 	
 	public void displayBoard(){
 		System.out.println("Current Tic-Tac-Toe status");
@@ -66,5 +69,65 @@ TicTacToeService service = new TicTacToeService();
 			System.out.println("Boring draw :/");
 			System.out.println();
 		}
+	}
+
+	public void startGame() {
+		Scanner in = new Scanner(System.in);
+		int x;
+		int y;
+		String row;
+		String column;
+		String playAgain = "y";
+		greetingMessage();
+		do {
+			while (true) {
+				displayBoard();
+				if (service.getCurrentPlayer() == 'X') {
+					System.out.println("Player1 make your move!");
+				} else {
+					System.out.println("Player2 make your move!");
+				}
+
+				System.out.println("Enter row number (0-2): ");
+				row = in.nextLine();
+				System.out.println("Enter column number (0-2): ");
+				column = in.nextLine();
+
+				// Check if input is a number
+				if (service.inputIsANumber(row, column)) {
+					x = Integer.parseInt(row);
+					y = Integer.parseInt(column);
+				} else {
+					invalidInputNumber();
+					continue;
+				}
+				// Check if the cell is within the board
+				if (!service.inputIsValid(x, y)) {
+					invalidMove();
+					continue;
+				}
+				// Check if the cell is empty
+				if (!service.cellIsEmpty(x, y)) {
+					invalidCellPosistion();
+					continue;
+				} else {
+					break;
+				}
+			}
+
+			service.setCell(x, y, service.getCurrentPlayer());
+			
+			if (service.checkWinner() || service.isBoardFull()) {
+				displayBoard();
+				winnerMessage();
+				System.out.println("Play again? (y/n)");
+				playAgain = in.nextLine();
+				service.initializeBoard();
+			} else {
+				service.changePlayer();
+			}
+		} while (playAgain.equals("y"));
+		
+		in.close();
 	}
 }
