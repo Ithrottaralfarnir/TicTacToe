@@ -89,12 +89,19 @@ public class TicTacToeServiceTest{
         assertEquals(PLAYER1, service.getCurrentPlayer());
   }
 
+ @Test
+ public void testChangePlayerToPLAYER1(){
+  	service.changePlayer();
+        service.changePlayer();
+        assertEquals(PLAYER1, service.getCurrentPlayer());
+  }	
+
   @Test
-  public void testChangePlayer() {
+  public void testChangeToPLAYER2() {
 	service.changePlayer();
         assertEquals(PLAYER2, service.getCurrentPlayer());
   }
-  
+
   @Test
   public void testCheckWinnerHorizontal() {
 	for(int y = 0; y < SIZE_OF_BOARD; y++){
