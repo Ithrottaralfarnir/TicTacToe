@@ -16,7 +16,7 @@ public class TicTacToeService {
 		initializeBoard();
 	}
 	
-	private void initializeBoard(){
+	public void initializeBoard(){
 		for(int x = 0; x < SIZE_OF_BOARD; x++){
 			for(int y = 0; y < SIZE_OF_BOARD; y++){
 				board[x][y] = EMPTY;
