@@ -103,9 +103,17 @@ public class TicTacToeServiceTest{
   }
 
   @Test
-  public void testCheckWinnerHorizontal() {
+  public void testCheckWinnerHorizontalPLAYER1() {
 	for(int y = 0; y < SIZE_OF_BOARD; y++){
           board[0][y] = PLAYER1;
+        }
+        assertEquals(true, service.checkWinner());
+  }
+
+  @Test
+  public void testCheckWinnerHorizontalPLAYER2() {
+	for(int y = 0; y < SIZE_OF_BOARD; y++){
+          board[2][y] = PLAYER2;
         }
         assertEquals(true, service.checkWinner());
   }
@@ -120,9 +128,17 @@ public class TicTacToeServiceTest{
   }
 
   @Test
-  public void testCheckWinnerVertical() {
+  public void testCheckWinnerVerticalPLAYER1() {
 	for(int x = 0; x < SIZE_OF_BOARD; x++){
           board[x][1] = PLAYER1;
+        }
+        assertEquals(true, service.checkWinner());
+  }
+
+  @Test
+  public void testCheckWinnerVerticalPLAYER2() {
+	for(int x = 0; x < SIZE_OF_BOARD; x++){
+          board[x][0] = PLAYER2;
         }
         assertEquals(true, service.checkWinner());
   }
@@ -155,9 +171,9 @@ public class TicTacToeServiceTest{
 
   @Test
   public void testCheckWinnerDiagonal2() {
-        board[2][0] = PLAYER1;
-        board[1][1] = PLAYER1;
-        board[0][2] = PLAYER1;
+        board[2][0] = PLAYER2;
+        board[1][1] = PLAYER2;
+        board[0][2] = PLAYER2;
         assertEquals(true, service.checkWinner());
   }
 
