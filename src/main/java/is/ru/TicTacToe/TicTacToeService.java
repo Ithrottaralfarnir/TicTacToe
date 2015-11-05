@@ -1,7 +1,7 @@
 package is.ru.TicTacToe;
 
 public class TicTacToeService {
-	
+//	
 	private char board[][];
 	private char currentPlayer;
 	private int SIZE_OF_BOARD = 3;
